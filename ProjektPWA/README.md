@@ -1,6 +1,7 @@
 # Team
 
 Michał 74682
+Patryk 46964
 
 # Nuxt 3 Minimal Starter
 
