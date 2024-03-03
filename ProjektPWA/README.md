@@ -2,6 +2,7 @@
 
 Michał 74682
 Patryk 46964
+Paweł  70480
 
 # Nuxt 3 Minimal Starter
 
