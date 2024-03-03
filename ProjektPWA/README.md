@@ -6,7 +6,7 @@ Patryk 46964
 
 Paweł 70480
 
-Szymon Reguła 70479
+Szymon 70479
 
 # Nuxt 3 Minimal Starter
 
