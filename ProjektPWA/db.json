@@ -1,0 +1,43 @@
+{
+  "clothes": [
+    {
+      "id": "1",
+      "type": "Marynarka",
+      "color": "czarna",
+      "price": 599,
+      "img": "https://clickfashion.pl/media/catalog/product/cache/e12d541ba4c3f356074c6c998883577d/c/l/click_1011_9575_kopia.jpg"
+    },
+    {
+      "id": "2",
+      "type": "Marynarka",
+      "color": "zielona",
+      "price": 549,
+      "img": "https://clickfashion.pl/media/catalog/product/cache/e12d541ba4c3f356074c6c998883577d/4/1/41de079b69334e36a2e3a33818e4bbc1.jpg"
+    },
+    {
+      "id": "3",
+      "type": "Spodnie",
+      "color": "zielone",
+      "price": 299,
+      "img": "https://clickfashion.pl/media/catalog/product/cache/e12d541ba4c3f356074c6c998883577d/3/0/30-261_3_.jpg"
+    },
+    {
+      "id": "4",
+      "type": "Marynarka",
+      "color": "magenta",
+      "price": 447,
+      "img": "https://clickfashion.pl/media/catalog/product/cache/e12d541ba4c3f356074c6c998883577d/9/3/9307.jpg"
+    },
+    {
+      "id": "5",
+      "type": "Koszula",
+      "color": "biała",
+      "price": 269,
+      "img": "https://clickfashion.pl/media/catalog/product/cache/e12d541ba4c3f356074c6c998883577d/c/l/click_1011_9679_kopia.jpg"
+    }
+  ],
+
+  "profile": {
+    "name": "typicode"
+  }
+}
