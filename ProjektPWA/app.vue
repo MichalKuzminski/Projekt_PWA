@@ -1,5 +1,21 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <!-- <NuxtWelcome /> -->
+    <TopInfoComponent>
+      <Icon name="ci:shopping-cart-02"/>
+      <div>
+        PRODUKTY TWORZONE RĘCZNIE, WYSYŁKA MOŻE WYDŁUŻYĆ SIĘ DO 5 DNI
+      </div>
+    </TopInfoComponent>
+
+    <BottomInfoComponent>
+      <template #content-left>
+        © 2023 CLICK FASHION. Wszelkie prawa zastrzeżone.
+      </template>
+        
+      <template #content-right>
+        Proudly made by grupa3pwa
+      </template>
+    </BottomInfoComponent>
   </div>
 </template>
