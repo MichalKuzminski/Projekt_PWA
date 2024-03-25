@@ -7,6 +7,7 @@
                 PRODUKTY TWORZONE RĘCZNIE, WYSYŁKA MOŻE WYDŁUŻYĆ SIĘ DO 5 DNI
             </div>
         </TopInfoComponent>
+        <BannersCollection2024 />
         <div class="clothes">
             <BannersTopBestsellers style="padding: 0 !important" />
             <div v-if="clothesData.length" class="clothes">
