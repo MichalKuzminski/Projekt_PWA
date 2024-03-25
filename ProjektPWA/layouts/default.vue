@@ -18,6 +18,7 @@
                 <h1>Wystąpił problem podczas wczytywania listy ubrań :(</h1>
             </div>
         </div>
+        <NewsletterComponent/>
         <BottomInfoComponent>
             <template #content-left>
                 © 2023 CLICK FASHION. Wszelkie prawa zastrzeżone.
@@ -61,9 +62,9 @@ export default defineComponent({
 .clothes {
     display: flex;
     flex-wrap: wrap;
-    background-color: aliceblue;
+    background-color: $white;
     padding: 2%;
-    color: black;
+    color: $black;
     justify-content: center;
 }
 </style>

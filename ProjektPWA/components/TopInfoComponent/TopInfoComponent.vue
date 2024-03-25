@@ -7,26 +7,15 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
-export default defineComponent({
+<script lang="ts" setup>
+import { ref } from 'vue'
 
-    setup() {
-        const isClosed = ref(false)
+const isClosed = ref(false)
 
-        const closeHeader = () => {
-            isClosed.value = false
-        }
-
-
-        return {
-            isClosed,
-            closeHeader
-        }
-
-    }
+const closeHeader = () => {
+    isClosed.value = true
 }
-)
+
 </script>
 
 <style lang="scss" scoped>
@@ -44,11 +33,11 @@ export default defineComponent({
     font-family: $global-font;
     font-weight: 600;
     gap: 3px;
+    color: $white;
 
     .content-icon {
         position: absolute;
         right: $header-info-padding;
-        ;
         transition: all 0.2s;
         font-size: 22px;
 

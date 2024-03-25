@@ -18,27 +18,15 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 
-
-import { defineComponent } from 'vue'
-export default defineComponent({
-
-    setup() {
-        const scrollToTop = (): void => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-
-        }
-
-        return {
-            scrollToTop
-        }
-    }
+const scrollToTop = (): void => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
-)
+
 </script>
 
 <style lang="scss" scoped>
@@ -53,6 +41,7 @@ export default defineComponent({
     height: $bottom-info-height;
     padding-inline: $bottom-info-padding;
     font-size: 12px;
+    color: $white;
 
     .content {
         text-align: center;
