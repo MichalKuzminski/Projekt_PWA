@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 $global-font: "Montserrat", sans-serif;
-$merriweather-font: "Merriweather, serif";
+$merriweather-font: 'Merriweather', serif;
+$black: #1e1e1e;
+$white: #FFF;
+$grey: #676767;
 
 $header-info-padding: 16px;
 $header-info-background-color: rgb(17, 17, 17);
