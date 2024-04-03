@@ -64,7 +64,6 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-/*
 .clothes {
   display: flex;
   flex-wrap: wrap;
@@ -72,5 +71,5 @@ export default defineComponent({
   padding: 2%;
   color: $black;
   justify-content: center;
-}*/
+}
 </style>
