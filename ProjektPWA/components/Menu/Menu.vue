@@ -1,17 +1,64 @@
 <script setup>
-</script>
+  import { ref, onMounted, onUnmounted } from 'vue'
+ 
+  const isSearchOpen = ref(false)
+ 
+  const searchClickHandler = () => {
+    isSearchOpen.value = !isSearchOpen.value
+    console.log("wwww")
+  };
 
+  // Function to close the box when clicking outside
+const clickOutsideHandler = (event) => {
+  if (isSearchOpen.value && !event.target.closest('.search-box')) {
+    isSearchOpen.value = false
+  }
+};
+
+// Mount event listener when component is mounted
+onMounted(() => {
+  document.addEventListener('click', clickOutsideHandler)
+  console.log("onMounted")
+})
+
+// Remove event listener when component is unmounted to prevent memory leaks
+onUnmounted(() => {
+  document.removeEventListener('click', clickOutsideHandler)
+  console.log("onUnmounted")
+})
+
+</script>
+ 
 <template>
-    <div class="container flex flex-wrap max-w-screen-xl">
-        <div class="items-center justify-between mx-auto p-4 ">
-            <img src="https://clickfashion.pl/media/logo/websites/1/clickfashion-logo.png" title="" alt="Click Fashion" width="170" height="43" style="">   
-        </div>
-        <div class="flex flex-wra">
-            <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/search.svg"/>
-            <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/account.svg"/>
-            <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/heart.svg"/>
-            <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/cart.svg"/>
-            
+    <div class="container flex place-content-between max-w-screen-xl p-4 mx-auto">
+            <NuxtLink to="/">
+              <img src="https://clickfashion.pl/media/logo/websites/1/clickfashion-logo.png" title="" alt="Click Fashion" width="170" height="43" style="">   
+            </NuxtLink>
+        <div class="flex gap-4 items-center">
+            <select>
+              <option>
+                PL
+              </option>
+              <option>
+                EN
+              </option>
+            </select>
+            <div>
+              
+              <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/search.svg" @click="searchClickHandler" alt="Open Box" style="cursor: pointer;"/>
+              <div v-if="isSearchOpen" ref="searchBox" class="search-box">
+                SZUKAJ W SKLEPIE...
+              </div>
+            </div>
+            <NuxtLink to="/konto">
+              <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/account.svg"/>
+            </NuxtLink>
+            <NuxtLink to="/ulubione">
+              <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/heart.svg"/>
+            </NuxtLink>
+            <NuxtLink to="/wozek">
+              <img class="border-l-2 pl-4" src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/cart.svg"/>
+            </NuxtLink>
         </div>
     </div>
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
@@ -19,49 +66,47 @@
     <div class="hidden w-full md:block md:w-auto">
       <ul class="font-light flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <NuxtLink to="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">SKLEP</NuxtLink>
+          <NuxtLink to="/" class="animation block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">SKLEP</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/kolekcja" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">KOLEKCJA ZIMOWA</NuxtLink>
+          <NuxtLink to="/kolekcja-zimowa" class="animation block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">KOLEKCJA ZIMOWA</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">STYLIZACJE CODZIENNE</NuxtLink>
+          <NuxtLink to="/stylizacje-codzienne" class="animation block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">STYLIZACJE CODZIENNE</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">KOLEKCJA ŚWIĄTECZNA</NuxtLink>
+          <NuxtLink to="/kolekcja-swiateczna" class="animation block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">KOLEKCJA ŚWIĄTECZNA</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">WYPRZEDAŻ</NuxtLink>
+          <NuxtLink to="wyprzedaz" class="animation block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">WYPRZEDAŻ</NuxtLink>
         </li>
-        <li class="textbox">
-          <NuxtLink to="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">NOWOŚCI</NuxtLink>
+        <li>
+          <NuxtLink to="nowosci" class="animation block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text">NOWOŚCI</NuxtLink>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 </template>
-
+ 
 <style lang="scss" scoped>
 @import '@/globalStyles.scss';
-
+ 
 .text {
-
-    font-family: 'Schneidler Std Mediaeval Small Caps Light';
-
+    font-family: $merriweather-font;
 }
-
-
-
+ 
+ 
+ 
 /* Underline styles */
-a {
+.animation {
   display: block;
   position: relative;
   padding: 0.2em 0;
 }
-
+ 
 /* Fade in */
-a::after {
+.animation::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -72,43 +117,32 @@ a::after {
   opacity: 0;
   transition: opacity 500ms, transform 500ms;
 }
-
-a:hover::after,
-a:focus::after {
+ 
+.animation:hover::after,
+.animation:focus::after {
   opacity: 1;
   transform: translate3d(0, 0.2em, 0);
 }
-
+ 
 /* Slide in */
-li a {
+li .animation {
   overflow: hidden;
 }
-
-li a::after {
+ 
+li .animation::after {
   opacity: 1;
   transform: translate3d(-100%, 0, 0);
 }
-
-li a:hover::after,
-li a:focus::after{
+ 
+li .animation:hover::after,
+li .animation:focus::after{
   transform: translate3d(0, 0, 0);
 }
 
-.toolbox{
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1140px;
-    padding-left: 40px;
-    padding-right: 40px;
-    width: auto;
+.search-box {
+  /* Your box styling goes here */
+  border: 1px solid #ccc;
+  padding: 10px;
 }
-
-
-
-
-
-
-
 
 </style>
