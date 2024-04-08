@@ -1,32 +1,11 @@
-<script setup>
-  import { ref, onMounted, onUnmounted } from 'vue'
- 
-  const isSearchOpen = ref(false)
- 
-  const searchClickHandler = () => {
-    isSearchOpen.value = !isSearchOpen.value
-    console.log("wwww")
-  };
+<script setup lang="ts">
+import { ref } from 'vue'
 
-  // Function to close the box when clicking outside
-const clickOutsideHandler = (event) => {
-  if (isSearchOpen.value && !event.target.closest('.search-box')) {
-    isSearchOpen.value = false
-  }
+const isSearchOpen = ref(false)
+
+const searchClickHandler = () => {
+  isSearchOpen.value = !isSearchOpen.value
 };
-
-// Mount event listener when component is mounted
-onMounted(() => {
-  document.addEventListener('click', clickOutsideHandler)
-  console.log("onMounted")
-})
-
-// Remove event listener when component is unmounted to prevent memory leaks
-onUnmounted(() => {
-  document.removeEventListener('click', clickOutsideHandler)
-  console.log("onUnmounted")
-})
-
 </script>
  
 <template>
@@ -43,12 +22,12 @@ onUnmounted(() => {
                 EN
               </option>
             </select>
-            <div>
+            <div class="flex">
               
-              <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/search.svg" @click="searchClickHandler" alt="Open Box" style="cursor: pointer;"/>
-              <div v-if="isSearchOpen" ref="searchBox" class="search-box">
+              <div v-if="isSearchOpen" class="search-box">
                 SZUKAJ W SKLEPIE...
               </div>
+              <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/search.svg" @click="searchClickHandler()" alt="Open Box" style="cursor: pointer;" />
             </div>
             <NuxtLink to="/konto">
               <img src="https://clickfashion.pl/static/version1709801068/frontend/Idea07/client-customization/en_US//images/icons/account.svg"/>
@@ -93,7 +72,7 @@ onUnmounted(() => {
 @import '@/globalStyles.scss';
  
 .text {
-    font-family: $merriweather-font;
+  font-family: $merriweather-font;
 }
  
  
