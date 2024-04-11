@@ -22,6 +22,9 @@
         <h1>Wystąpił problem podczas wczytywania listy ubrań :(</h1>
       </div>
     </div>
+
+    <InfoComponent />
+
     <NewsletterComponent />
 
     <Footer />
