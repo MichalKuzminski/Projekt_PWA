@@ -1,3 +1,3 @@
 <template>
-    <h1>TEST</h1>
+    <h1 class="container p-4 mx-auto">Placeholder dla Wózka</h1>
 </template>
