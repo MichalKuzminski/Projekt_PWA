@@ -5,23 +5,8 @@
       <Icon name="ci:shopping-cart-02" />
       <div>PRODUKTY TWORZONE RĘCZNIE, WYSYŁKA MOŻE WYDŁUŻYĆ SIĘ DO 5 DNI</div>
     </TopInfoComponent>
-    <BannersCollection2024 />
-    <div class="clothes">
-      <BannersTopBestsellers style="padding: 0 !important" />
-      <div v-if="clothesData.length" class="clothes">
-        <ClothesTile
-          v-for="(cl, idx) in clothesData"
-          :key="idx"
-          :imageSrc="cl.img"
-          :type="cl.type"
-          :color="cl.color"
-          :price="cl.price"
-        />
-      </div>
-      <div v-else>
-        <h1>Wystąpił problem podczas wczytywania listy ubrań :(</h1>
-      </div>
-    </div>
+    <Menu></Menu>
+    <slot />
 
     <InfoComponent />
 
