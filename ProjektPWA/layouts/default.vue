@@ -8,8 +8,6 @@
     <Menu></Menu>
     <slot />
 
-    <InfoComponent />
-
     <NewsletterComponent />
 
     <Footer />
