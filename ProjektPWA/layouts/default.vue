@@ -6,7 +6,7 @@
       <div>PRODUKTY TWORZONE RĘCZNIE, WYSYŁKA MOŻE WYDŁUŻYĆ SIĘ DO 5 DNI</div>
     </TopInfoComponent>
     <Menu></Menu>
-    <slot/>
+    <slot />
 
     <NewsletterComponent />
 
