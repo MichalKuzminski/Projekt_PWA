@@ -10,16 +10,20 @@
     <div class="banner-container_content">
       <p class="collection">KOLEKCJA 2024 / MODOWE INSPIRACJE</p>
       <h1>CLICK FASHION</h1>
-      <p class="desc">Ręcznie robione ubrania, naturalne materiały, polska marka</p>
-      <button><span>WIĘCEJ</span><Icon class="icon" name="oi:arrow-right" /></button>
+      <p class="desc">
+        Ręcznie robione ubrania, naturalne materiały, polska marka
+      </p>
+      <button>
+        <span>WIĘCEJ</span><Icon class="icon" name="oi:arrow-right" />
+      </button>
     </div>
     <div class="banner-container_indent"></div>
-    <img src="https://clickfashion.pl/media/idea07_contenttypes/contenttypeentity/image/p/r/projekt_bez_nazwy_1_.png" alt="baner-image">
+    <img
+      src="https://clickfashion.pl/media/idea07_contenttypes/contenttypeentity/image/p/r/projekt_bez_nazwy_1_.png"
+      alt="baner-image"
+    />
   </div>
 </template>
-
-<script lang="ts" setup>
-</script>
 
 <style lang="scss" scoped>
 @import '@/globalStyles.scss';
@@ -27,8 +31,7 @@
   position: relative;
   width: 100%;
   min-height: 650px;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url('https://clickfashion.pl/media/idea07_contenttypes/contenttypeentity/image/p/r/projekt_bez_nazwy_1_.png');
   background-size: cover;
   background-position: 0 -60px;
@@ -51,8 +54,8 @@
     background-color: $white;
     @include flex-center;
     flex-direction: column;
-    justify-content:space-evenly;
-    gap:20px;
+    justify-content: space-evenly;
+    gap: 20px;
     width: 70px;
     height: 328px;
 
@@ -80,7 +83,7 @@
   &_content {
     position: absolute;
     right: 65%;
-    top:20%;
+    top: 20%;
     color: $white;
     max-width: 530px;
 
@@ -118,7 +121,7 @@
       font-size: 0.9rem;
       transition: all 0.3s ease;
 
-      &:hover{
+      &:hover {
         color: black;
         background-color: $white;
       }
@@ -126,7 +129,7 @@
   }
 
   &_indent {
-    left:0;
+    left: 0;
     bottom: 0;
     position: absolute;
     width: 500px;
